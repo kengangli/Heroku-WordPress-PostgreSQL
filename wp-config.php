@@ -1,46 +1,31 @@
 <?php
 /**
- * The base configuration for WordPress
+ * The base configurations of the WordPress.
  *
- * The wp-config.php creation script uses this file during the
- * installation. You don't have to use the web site, you can
- * copy this file to "wp-config.php" and fill in the values.
+ * This file has the following configurations: MySQL settings, Table Prefix,
+ * Secret Keys, and ABSPATH. You can find more information by visiting
+ * {@link http://codex.wordpress.org/Editing_wp-config.php Editing wp-config.php}
+ * Codex page. You can get the MySQL settings from your web host.
  *
- * This file contains the following configurations:
- *
- * * MySQL settings
- * * Secret keys
- * * Database table prefix
- * * ABSPATH
- *
- * @link https://codex.wordpress.org/Editing_wp-config.php
+ * This file is used by the wp-config.php creation script during the
+ * installation. You don't have to use the web site, you can just copy this file
+ * to "wp-config.php" and fill in the values.
  *
  * @package WordPress
  */
 
-// Sendgrid settings - Read in the sendgrid auth from the config //
-define('SENDGRID_USERNAME', $_ENV["SENDGRID_USERNAME"]);
-define('SENDGRID_PASSWORD', $_ENV["SENDGRID_PASSWORD"]); 
-  
-// S3 Config Info - read the S3 Access Keys from the config //
-define( 'AWS_ACCESS_KEY_ID', $_ENV["AWS_ACCESS_KEY_ID"]);
-define( 'AWS_SECRET_ACCESS_KEY', $_ENV["AWS_SECRET_ACCESS_KEY"]);  
-
-// ** Heroku Postgres settings - from Heroku Environment ** //
-$db = parse_url($_ENV["DATABASE_URL"]);
-
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', trim($db["path"],"/"));
+define('DB_NAME', 'ddo74brn9b6dij');
 
 /** MySQL database username */
-define('DB_USER', $db["user"]);
+define('DB_USER', 'zlkdixzpijwodh');
 
 /** MySQL database password */
-define('DB_PASSWORD', $db["pass"]);
+define('DB_PASSWORD', 'bf158f8c1fd6dae841d11d7fe1644bd1e86963978bd6ece227291f138aba16b6');
 
 /** MySQL hostname */
-define('DB_HOST', $db["host"]);
+define('DB_HOST', 'ec2-3-216-92-193.compute-1.amazonaws.com');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -57,15 +42,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         $_ENV["AUTH_KEY"]);
-define('SECURE_AUTH_KEY',  $_ENV["SECURE_AUTH_KEY"]);
-define('LOGGED_IN_KEY',    $_ENV["LOGGED_IN_KEY"]);
-define('NONCE_KEY',        $_ENV["NONCE_KEY"]);
-define('AUTH_SALT',        $_ENV["AUTH_SALT"]);
-define('SECURE_AUTH_SALT', $_ENV["SECURE_AUTH_SALT"]);
-define('LOGGED_IN_SALT',   $_ENV["LOGGED_IN_SALT"]);
-define('NONCE_SALT',       $_ENV["NONCE_SALT"]);
-
+define('AUTH_KEY',         'k;#^-z%Lw4>M2^x+3z+_<9Q?_K9hTgvb*8/-g0Lb|>EAFK=|Mi9KMMFq%O?yI@)=');
+define('SECURE_AUTH_KEY',  '-u*:k&oas;,BiOGa2`)1i${gX77v]B=,#z*i(bpOr@:`c76Yj!|3l|RD+9&-&.~2');
+define('LOGGED_IN_KEY',    ')aaIr[agxC+5B ^+}>%KpW)4{K|aD{t=o2)vmI2Ba(+4]e]C`&b)kkmX[WvlN$&H');
+define('NONCE_KEY',        'kAs3_SUZc{6Qk)R|SSv B;BF8k1z0 t6qYV6[P21.vD]&%`T0&1F7PfJp.1ISfP(');
+define('AUTH_SALT',        'gf!-9`+cM=nPLIXm$jB-Hu:><ui0y;F]|Xib<W:;&hBLyadGhZ=%ku{p71i@pAV;');
+define('SECURE_AUTH_SALT', 'KfU0Ez.o1+0^[#.EbUv[O{]cI-3o%=2spvb+,PlIIn! dyE2EL~}t9 -2Rb3/8iw');
+define('LOGGED_IN_SALT',   'qy>V9!x|~^uW{63e:;6ua{llNT^lem7V0y?r>0(UPQ9.yh+{4t<LJ@y>%H9[A%|^');
+define('NONCE_SALT',       '4ld|+84s]hjDpV0Z8o(3kGCBriZ)VeALV.156VVbB[lXdRVN%Sfy*=N8DxP-ZUzV');
 /**#@-*/
 
 /**
@@ -77,16 +61,6 @@ define('NONCE_SALT',       $_ENV["NONCE_SALT"]);
 $table_prefix  = 'wp_';
 
 /**
- * WordPress Localized Language, defaults to English.
- *
- * Change this to localize WordPress. A corresponding MO file for the chosen
- * language must be installed to wp-content/languages. For example, install
- * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
- * language support.
- */
-define('WPLANG', 'en');
-
-/**
  * For developers: WordPress debugging mode.
  *
  * Change this to true to enable the display of notices during development.
@@ -94,7 +68,6 @@ define('WPLANG', 'en');
  * in their development environments.
  */
 define('WP_DEBUG', false);
-define( 'WP_AUTO_UPDATE_CORE', false );
 
 /* That's all, stop editing! Happy blogging. */
 
